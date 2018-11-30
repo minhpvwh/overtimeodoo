@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <!--
+    <record model="ir.ui.view" id="over-time.list">
+      <field name="name">over-time list</field>
+      <field name="model">over-time.over-time</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="over-time.action_window">
+      <field name="name">over-time window</field>
+      <field name="res_model">over-time.over-time</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="over-time.action_server">
+      <field name="name">over-time server</field>
+      <field name="model_id" ref="model_over-time_over-time"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="over-time" id="over-time.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="over-time.menu_1" parent="over-time.menu_root"/>
+    <menuitem name="Menu 2" id="over-time.menu_2" parent="over-time.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="over-time.menu_1_list" parent="over-time.menu_1"
+              action="over-time.action_window"/>
+    <menuitem name="Server to list" id="over-time" parent="over-time.menu_2"
+              action="over-time.action_server"/>
+    -->
+  </data>
+</odoo>
