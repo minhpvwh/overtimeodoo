@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding='utf-8' ?>
+<odoo>
+    <data>
+        <menuitem id="overtime_menu"
+                  name="Overtime"
+                  sequence="76"
+                  action="overtime_menu_act"
+                  groups="hr.group_hr_user"
+                  web_icon="over_time,static/description/icon.png"/>
+
+    </data>
+</odoo>

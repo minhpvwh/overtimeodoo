@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding='utf-8' ?>
+<odoo>
+    <data>
+        <record id="overtime_menu_act" model="ir.actions.act_window">
+            <field name="name">Overtime</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.overtime</field>
+            <field name="view_mode">tree,form</field>
+
+
+        </record>
+
+
+        <record id="overtime_menu_tree" model="ir.ui.view">
+            <field name="name">Overtime tree</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <tree string="Overtime tree">
+                    <field name="create_day"/>
+                    <field name="target"/>
+                    <field name="payroll"/>
+                    <field name="subsidy" sum="Total"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="overtime_menu_form" model="ir.ui.view">
+            <field name="name">Overtime form</field>
+            <field name="model">hr.overtime</field>
+            <field name="arch" type="xml">
+                <form string="Overtime form">
+                    <sheet>
+                        <h1>
+                            <field name="target" placeholder="Target"/>
+                        </h1>
+                        <group>
+
+                            <field name="department_id"/>
+                            <field name="create_day" widget="date"/>
+                            <field name="subsidy"/>
+                            <field name="note"/>
+                            <field name="payroll" widget="radio"/>
+                            <field name="index" attrs="{'invisible':[('payroll', '=', 'payroll_no')]}"/>
+
+                        </group>
+                        <notebook>
+                            <page string="Employee list">
+                                <field name="emp">
+                                    <tree editable="bottom">
+                                        <field name="emp"
+                                               attrs="{'required':True}"/>
+                                        <field name="rate"/>
+                                        <field name="time_ot"/>
+                                        <field name="eat_lunch"/>
+                                        <field name="note"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
